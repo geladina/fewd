@@ -16,7 +16,7 @@
         background: url("images/profile pic 2.png");
         background-size: cover;
         background-repeat: no-repeat;
-        margin:100px auto;
+        margin:0;
         width: 80%;
         font-family: helvetica;
         font-weight: lighter;
@@ -24,7 +24,7 @@
       }
       div {
         display: block;
-        right: 5%;
+        right: 80px;
         position: absolute;
         border-radius: 2%;
         max-width: 350px;
@@ -33,6 +33,12 @@
       }
       a {
         color: RGBA(181, 181, 181, 1);
+      }
+      @media (max-width: 500px) {
+        div {
+        position: relative;
+        margin: auto;
+        }
       }
     </style>
 
