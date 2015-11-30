@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://avandamiri.com/fewd-37/week-4/homework/blog.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Blog</title>
+
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #f1f0f5;
+        font-family: sans-serif;
+        font-size: 18px;
+        line-height: 1.4em;
+      }
+      main {
+        margin: 2em auto;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        background: white;
+        padding: 2em 3em;
+        max-width: 600px;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      article {
+        padding-bottom: 1em;
+        margin-bottom: 2em;
+        border-bottom: 1px solid #ccc;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+      }
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #049cd8;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      textarea,
+      .comment {
+        border: 1px solid #ccc;
+        padding: .5em 1em;
+        margin: 1em 0;
+        border-radius: 5px;
+      }
+      textarea {
+        font-size: inherit;
+      }
+      button {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom-width: 2px;
+        border-radius: 5px; font-size: inherit;
+        color: white;
+        background-color: #049cd8;
+        padding: .5em 1em;
+        cursor: pointer;
+      }
+    </style>
+  <style type="text/css"></style></head>
+  <body data-pinterest-extension-installed="cr1.39.1">
+    <main>
+      <article>
+        <h1>The Challenges of Programming</h1>
+
+        <p>
+          Programming can be tough...
+          lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <ul>
+          <li>lorem</li>
+          <li>ipsum</li>
+          <li>dolor</li>
+        </ul>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </article>
+
+      <div class="like">
+        <a href="http://avandamiri.com/fewd-37/week-4/homework/blog.html#" class="like-link">Like</a>
+        (<span class="like-count">0</span>)
+      </div>
+
+      <div id="comments">
+        <!--
+        <div class="comment">
+          You're looking good!
+        </div>
+        -->
+      </div>
+
+      <form id="new-comment">
+        <textarea id="new-comment-body" placeholder="Leave a comment..."></textarea>
+        <button type="submit">Comment</button>
+      </form>
+    </main>
+
+    <script>
+      var link = document.querySelector(".like-link");
+      var form = document.querySelector("#new-comment");
+
+      link.addEventListener("click", like);
+      link.addEventListener("submit", comment);
+
+      function like(event) {
+        event.preventDefault();
+
+        //accesing the span with a class of "like-count"
+        var likeSpan = document.querySelector(".like-count");
+
+        //accesing the actual like-count inside the span
+        var x = likeSpan.textContent;
+
+        //converting x from a string into a number
+        var y = parseInt(x);
+
+        //setting a new value by adding 1
+        var z = y + 1;
+
+        //return new to span
+        likeSpan.textContent = z;
+      }
+
+      function comment(event) {
+        event.preventDefault();
+
+        // take value of text area and set it to become a comment
+        var newComment = document.createElement("textarea");
+
+        var newComment = document.querySelector(".new-comment-body");
+
+
+
+      }
+    </script>
+
+
+</body></html>

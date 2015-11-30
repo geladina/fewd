@@ -6,21 +6,80 @@
     <link rel="stylesheet" href="acme.css" media="screen" charset="utf-8">
   </head>
   <body>
-    <!-- JS will create all the elements -->
+    <script type="text/javascript">
+    // <!-- JS will create all the elements -->
+
     // Create the header
-var body = document.querySelector("body");
-var header = document.createElement("header");
-body.appendChild(header);
+    var body = document.querySelector("body");
+    var header = document.createElement("header");
+    body.appendChild(header);
 
-// Create the nav
-var nav = document.createElement("nav");
-header.appendChild(nav);
+    // Create the nav
+    var nav = document.createElement("nav");
+    header.appendChild(nav);
 
-// Create the sign up button
-var button = document.createElement("button");
-button.textContent = "Sign up";
-nav.appendChild(header);
+    //Create the logo
+    var logo = document.createElement("img");
+    logo.setAttribute("src","images/acme-corp.jpg");
+    nav.appendChild(logo);
 
-// And so on...
+    // Create the sign up button
+    var button = document.createElement("button");
+    button.textContent = "Sign up";
+    nav.appendChild(button);
+
+    // Create the products link
+    var link = document.createElement("a");
+    link.textContent = "Products";
+    nav.appendChild(link);
+
+    //Create section
+    var container = document.createElement("section");
+    body.appendChild(container);
+
+    //Create heading
+    var heading = document.createElement("h1");
+    heading.textContent = "Welcome to Acme Corp!";
+    container.appendChild(heading);
+
+    //Create paragraph 1
+    var bodyCopy1 = document.createElement("p");
+    bodyCopy1.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    container.appendChild(bodyCopy1);
+
+    //Create paragraph 2
+    var bodyCopy2 = document.createElement("p");
+    bodyCopy2.textContent = "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    container.appendChild(bodyCopy2);
+
+    //Create footer
+    var footer = document.createElement("footer");
+    body.appendChild(footer);
+
+    //Create border
+    var border = document.createElement("border");
+    footer.appendChild(border);
+
+    //Create copywright line
+    var copywrightLine = document.createElement("p");
+    copywrightLine.textContent = "Copywright, 2015";
+    footer.appendChild(copywrightLine);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- // And so on... -->
+    </script>
   </body>
 </html>
