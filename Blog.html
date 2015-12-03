@@ -131,21 +131,19 @@
       function comment(event) {
         event.preventDefault();
 
-        // take value of text area
-        var newComment = document.querySelector("#new-comment-body");
+        var x = document.querySelector("#new-comment-body");
 
-        // set it to become a comment
-        var addedComment = newComment.value;
+        var z = x.value;
 
-        var newCommentDiv = document.createElement("div");
+        var y = document.createElement("div");
 
-        newCommentDiv.classList.add("comment");
+        var commentsDiv = document.querySelector("#comments");
 
-        newCommentDiv.textContent = commentText;
+        y.classList.add("comment");
 
-        var commentsDiv = document.querySelector("comments");
+        y.textContent = z;
 
-        div.appendChild.commentsDiv
+        commentsDiv.appendChild(y);
       }
     </script>
 
