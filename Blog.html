@@ -107,7 +107,7 @@
       var form = document.querySelector("#new-comment");
 
       link.addEventListener("click", like);
-      link.addEventListener("submit", comment);
+      form.addEventListener("submit", comment);
 
       function like(event) {
         event.preventDefault();
@@ -131,13 +131,21 @@
       function comment(event) {
         event.preventDefault();
 
-        // take value of text area and set it to become a comment
-        var newComment = document.createElement("textarea");
+        // take value of text area
+        var newComment = document.querySelector("#new-comment-body");
 
-        var newComment = document.querySelector(".new-comment-body");
+        // set it to become a comment
+        var addedComment = newComment.value;
 
+        var newCommentDiv = document.createElement("div");
 
+        newCommentDiv.classList.add("comment");
 
+        newCommentDiv.textContent = commentText;
+
+        var commentsDiv = document.querySelector("comments");
+
+        div.appendChild.commentsDiv
       }
     </script>
 
