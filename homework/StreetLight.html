@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Street Light</title>
+    <style media="screen">
+    .streetlight {
+      background-color: #F2C500;
+      border-radius: 20px;
+      border: 2px solid #D9B315;
+      width: 400px;
+      margin: 0 auto;
+    }
+    .light {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #6F5700;
+      margin: 20px auto;
+      border: 2px solid #404040;
+      border-top-width: 8px;
+    }
+    .stop.turnon {
+      background-color: red;
+    }
+    .slow.turnon {
+      background-color: yellow;
+    }
+    .go.turnon {
+      background-color: green;
+    }
+    </style>
+
+  </head>
+  <body>
+    <button class="stopbttn">stop</button>
+    <button class="slowbttn">slow</button>
+    <button class="gobttn">go</button>
+    <button class="cautionbttn">caution</button>
+
+    <div class="streetlight">
+      <div class="stop light" ></div>
+      <div class="slow light"></div>
+      <div class="go light"></div>
+    </div>
+
+
+    <script type="text/javascript">
+    // STOP BUTTON ELEMENT
+    var stopButton = document.querySelector(".stopbttn");
+
+    // STOP FUNCTION/EVENT HANDLER
+    function toggleStopLight(event) {
+      event.preventDefault();
+      var stopLight = document.querySelector(".stop");
+      stopLight.classList.add("turnon");
+
+      stopCautionFunction();
+      turnOffSlowLight();
+      turnOffGoLight();
+    }
+
+    // STOP EVENT LISTENER
+    stopButton.addEventListener("click", toggleStopLight);
+
+
+    // SLOW BUTTON ELEMENT
+    var slowButton = document.querySelector(".slowbttn");
+
+    // SLOW FUNCTION/EVENT HANDLER
+    function toggleSlowLight(event) {
+      event.preventDefault();
+      var slowLight = document.querySelector(".slow");
+      slowLight.classList.add("turnon");
+
+      stopCautionFunction();
+      turnOffStopLight();
+      turnOffGoLight();
+    }
+
+    // SLOW EVENT LISTENER
+    slowButton.addEventListener("click", toggleSlowLight);
+
+
+    // GO BUTTON ELEMENT/EVENT HANDLER
+    var goButton = document.querySelector(".gobttn");
+
+    //GO FUNCTION
+    function toggleGoLight(event) {
+      event.preventDefault();
+      var goLight = document.querySelector(".go");
+      goLight.classList.add("turnon");
+
+      stopCautionFunction();
+      turnOffStopLight();
+      turnOffSlowLight();
+    }
+
+    //GO EVENT LISTENER
+    goButton.addEventListener("click", toggleGoLight);
+
+
+    function turnOffStopLight(){
+      var stopLight = document.querySelector(".stop");
+      stopLight.classList.remove("turnon");
+    }
+
+    function turnOffSlowLight(){
+      var slowLight = document.querySelector(".slow");
+      slowLight.classList.remove("turnon");
+    }
+
+    function turnOffGoLight(){
+      var goLight = document.querySelector(".go");
+      goLight.classList.remove("turnon");
+    }
+
+    // CAUTION BUTTON ELEMENT
+    var cautionButton = document.querySelector(".cautionbttn");
+
+    //CAUTION FUNCTION
+    var interval = null;
+    function blinkSlowLight(event) {
+      event.preventDefault();
+      interval = setInterval(cautionAction, 1000);
+
+      turnOffStopLight();
+      turnOffGoLight();
+    }
+
+    function cautionAction() {
+    var slowLight = document.querySelector(".slow");
+    slowLight.classList.toggle("turnon");
+    }
+
+
+    function stopCautionFunction() {
+    clearInterval(interval);
+    }
+
+    //CAUTION EVENT LISTENER
+    cautionButton.addEventListener("click", blinkSlowLight);
+
+    </script>
+
+  </body>
+</html>
