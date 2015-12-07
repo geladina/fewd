@@ -51,7 +51,7 @@ button {
 }
 
 body {
-  background-image: url("images/background.png");
+  background-image: url("../homework/img/background.png");
   background-color: lightgray;
   font-family: 'Lucida Grande';
   font-size: 18px;
