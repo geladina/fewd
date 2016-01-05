@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+
+    body {
+      background-color: #EAF5FF;
+    }
+
+    div {
+      display: block;
+      background-color: #C0C0C0;
+      position:fixed;
+      bottom: 0px;
+      height: 70px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    form {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 20px;
+      height: 50px;
+    }
+    button {
+      float: right;
+      color: white;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      background-color: #22ABD5;
+    }
+    input {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      float: left;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    #no-messages {
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul id="messages"></ul>
+      <ul id="no-messages">No Messages</ul>
+    </div>
+    <div>
+      <form id="new-message-form">
+        <input type='text' id='messageInput' placeholder='YourMessage'>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script>
+    var myDataRef = new Firebase('https://ofs4bvnhohl.firebaseio-demo.com/');
+    </script>
+  </body>
+</html>
