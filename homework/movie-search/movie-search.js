@@ -28,6 +28,7 @@ console.log(results);
 
  var movieArray = results["Search"];
 
+
   for (var i = 0; i < movieArray.length; i++) {
 
     var li = document.createElement("li");

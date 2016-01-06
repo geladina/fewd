@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+
+    body {
+      background-color: #EAF5FF;
+    }
+
+    .bottomcontainer {
+      display: block;
+      background-color: #C0C0C0;
+      position:fixed;
+      bottom: 0px;
+      height: 80px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    form {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 20px;
+      height: 50px;
+    }
+    button {
+      float: right;
+      color: white;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      background-color: #22ABD5;
+      width:10%;
+      height: 40px;
+      font-size: 20px;
+
+
+    }
+    input {
+      padding-left: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      display: inline-block;
+      width:86%;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    #no-messages {
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    #messages {
+      list-style: none;
+    }
+
+    .message {
+      margin: 30px 0px;
+    }
+
+    .chatBubble {
+      background: #F8FCFF;
+      padding: 20px;
+    }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul id="messages"></ul>
+      <div id="no-messages">No Messages</div>
+    </div>
+
+    <div class="bottomcontainer">
+      <form id="new-message-form">
+        <input type='text' id='messageInput' placeholder='Your Message'>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script>
+      var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
+      var username = localStorage.getItem("username");
+      var messagesList = document.querySelector("#messages");
+
+
+      var form = document.querySelector("#new-message-form");
+      form.addEventListener("submit",createNewMessage);
+
+
+      function createNewMessage(event) {
+        event.preventDefault();
+        console.log("hhyygbyggyb")
+        // The first time through, this var will be null because localStorage is empty
+        if (username == null) {
+          // Load the variables value from the results of prompt
+          username = prompt("what is your username?");
+          // Save it for future use in localStorage
+          localStorage.setItem("username", username);
+        }
+
+
+        var messageInput = document.querySelector("#messageInput"); //input (html element)
+        var messageEntered = messageInput.value //value
+        var now = new Date();
+
+        firebase.push({
+          username: username,
+          messageBody: messageEntered,
+          createdAt: now.getTime()
+        });
+        form.reset()
+      }
+
+
+    // "on" is just like "addEventListener", it accepts an event type and function as arguments
+    firebase.on("child_added", createMessageFromFirebase);
+
+    // This function will get called for every chat message in the database
+    function createMessageFromFirebase(snapshot) {
+      // The snapshot gives you access to the message data
+      // messageData holds the usmessageEl.classList.add("message");ername and body of the each message in the database
+      var messageData = snapshot.val();
+
+      // Now you can create a new element and set its textContent from the data
+      var messageEl = document.createElement("li");
+      messageEl.classList.add("message");
+      messagesList.appendChild(messageEl);
+
+      var messageContainer = document.createElement("div"); //created Div element
+      messageContainer.classList.add("chatBubble"); //added chat bubble class
+      messageContainer.textContent = messageData.messageBody; //added message text inside
+      messageEl.appendChild(messageContainer); //appended to its li
+
+      var author = document.createElement("div");
+      author.classList.add("authorClass");
+      author.textContent = messageData.username;
+      messageEl.appendChild(author);
+
+    }
+
+    </script>
+  </body>
+</html>
