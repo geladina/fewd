@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #F3F8F2;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+imgcontainer {
+  position: margin 0;
+  max-height: 640px;
+
+
+}
