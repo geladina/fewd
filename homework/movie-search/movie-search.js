@@ -1,17 +1,24 @@
-// This is what the data returning from IMDB will look like:
-var sampleResult = {
-  "Search": [
-    {
-      "Title": "Cool Runnings",
-      "Type": "movie",
-      "Year": "1993",
-      "imdbID": "tt0106611"
-    }
-  ]
-}
+// // This is what the data returning from IMDB will look like:
+// var sampleResult = {
+//   "Search": [
+//     {
+//       "Title": "Cool Runnings",
+//       "Type": "movie",
+//       "Year": "1993",
+//       "imdbID": "tt0106611"
+//     }
+//   ]
+// }
 
 // Attach an event listener to the form submit (using jQuery)
 $("#movie-search-form").submit(formSubmitted);
+// Clear results on keydown
+$('#query').on('keydown', clearResults);
+
+function clearResults() {
+  var ul = document.querySelector("#movies");
+  $(ul).empty();
+}
 
 // Handle the form submission: go to OMDB and get results
 function formSubmitted(event) {
@@ -55,6 +62,8 @@ console.log(results);
   }
 
 }
+
+
 
 // // Access the array of movies:
 // results["Search"]
