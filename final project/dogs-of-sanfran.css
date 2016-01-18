@@ -1,17 +1,160 @@
-* { box-sizing: border-box; }
 
 body {
-  font-family: Arial;
+  background-color: #FFF;
   margin: 0;
-  background: #F3F8F2;
-  font-family: sans-serif;
-  font-size: 18px;
-  line-height: 1.4em;
+  padding: 0;
+  overflow: hidden;
 }
 
-imgcontainer {
-  position: margin 0;
-  max-height: 640px;
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  line-height: 1em;
+  text-align: center;
+  padding-top: 2%;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+div {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.polaroid {
+  width: 400px;
+  height:500px;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 19%;
+}
+
+@keyframes slideOutRight {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  97% {
+    opacity: .7;
+  }
+
+  100% {
+    left: 250%;
+    transform: rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  97% {
+    opacity: .7;
+  }
+
+  100% {
+    left: -250%;
+    transform: rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+.card.slideOutRight {
+  animation: slideOutRight .8s linear;
+}
+
+.card.slideOutLeft {
+  animation: slideOutLeft .8s linear;
+}
+
+.card img {
+  border: 14px solid #F8F8F8;
+  border-bottom: 80px solid #F8F8F8;
+  box-shadow: 3px 3px 3px #D8D8D8;
+}
+
+p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 20px;
+  font: 18px 'Amatic SC', cursive;
+}
+
+.buttons {
+  width: 420px;
+  padding-top: 10px;
+}
+
+.like {
+    float: right;
+    border: 6px solid #f5f5f5;
+    background-color: #70CDC3;
+    border-radius: 100%;
+    color: #fff;
+    padding: 17px;
+    padding-bottom: 10px;
+    outline: none;
+    cursor:pointer;
+  }
+
+.like img {
+  width: auto;
+  height: 30px;
+}
+
+.like:hover {
+    background-color: #4A9E94;
+}
+
+.like:active {
+  background-color: #48848C;
+
+}
+
+.dislike img {
+  width: auto;
+  height: 30px;
+}
+
+.dislike:hover {
+    background-color: #E29660;
+}
+
+.dislike:active {
+  background-color: #BE8A64;
+}
+
+.dislike {
+  float: left;
+  border: 6px solid #f5f5f5;
+  background-color: #FFAB72;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  color: #fff;
+  padding: 17px;
+  padding-bottom: 10px;
+  outline: none;
+  cursor:pointer;
+  }
 
 
+.card {
+  position:absolute;
+  top:0;
+  left:0;
+  }
+
+.card.hide {
+  opacity: 0;
 }
