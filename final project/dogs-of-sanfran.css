@@ -120,20 +120,6 @@ p {
 
 .like:active {
   background-color: #48848C;
-
-}
-
-.dislike img {
-  width: auto;
-  height: 30px;
-}
-
-.dislike:hover {
-    background-color: #E29660;
-}
-
-.dislike:active {
-  background-color: #BE8A64;
 }
 
 .dislike {
@@ -149,6 +135,19 @@ p {
   outline: none;
   cursor:pointer;
   }
+
+.dislike img {
+  width: auto;
+  height: 30px;
+}
+
+.dislike:hover {
+    background-color: #E29660;
+}
+
+.dislike:active {
+  background-color: #BE8A64;
+}
 
 .card {
   position:absolute;
@@ -166,7 +165,6 @@ p {
 
 .results-list {
   width: 800px;
-  margin-top: 10px;
 }
 
 h2 {
@@ -176,7 +174,7 @@ h2 {
   padding-top: 2%;
 }
 
- .thumb {
+.thumb {
   margin: 0;
   display: inline-block;
   float:left;
@@ -185,7 +183,7 @@ h2 {
   padding: 20px;
 }
 
-  a {
+a {
   top: 0;
   right: 0;
   position: fixed;

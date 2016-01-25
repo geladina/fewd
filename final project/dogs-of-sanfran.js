@@ -1,30 +1,33 @@
 
+//global variables
 var visibleCardID = 1;
-var img = document.querySelector( '#card-' + visibleCardID);
+var img = document.querySelector("#card-" + visibleCardID);
 var likedImages = [];
 
-// show and hide images
+//SHOW AND HIDE IMAGES
 function hideImage() {
-  img.classList.add("hide");
+  img.classList.add("hide"); //add hide class
   visibleCardID = visibleCardID + 1;
-  img = document.querySelector( "#card-" + visibleCardID);
+  img = document.querySelector("#card-" + visibleCardID);
 
-  if (visibleCardID >= 14){
+  if (visibleCardID > 14){
     showMeResults();
   }
  }
 
+//SHOW LIKED IMAGE RESULTS
 function showMeResults(){
-  //adopt link
   var resultList = document.querySelector(".results-list");
   var matchText = document.createElement("h2");
 
+  //adopt link
   var textLink = document.createElement('a');
   var body = document.querySelector("body");
   textLink.textContent = "Feel like adopting a puppy?";
-  textLink.href = "https://www.sfspca.org/adoptions";
+  textLink.href = "https://www.sfspca.org/adoptions/dogs";
   body.appendChild(textLink);
 
+  //results page message
   if (likedImages.length === 0) {
     matchText.textContent = "You didn't like any dogs. Lame!";
   } else {
@@ -32,29 +35,24 @@ function showMeResults(){
   }
   resultList.appendChild(matchText);
 
-
-
+  //liked images for loop
   for (var i = 0; i < likedImages.length; i++) {
     var imageSource = likedImages[i];
-
-    var thumbnail = document.createElement("div"); //create div element
+    var thumbnail = document.createElement("div"); //create thumbnail element
     var img = document.createElement("img"); //create img element
-    thumbnail.setAttribute("class","thumb"); //give it the thumb attribute
-    img.setAttribute("src", imageSource); //add src of likedImage[i] to img
+    thumbnail.setAttribute("class","thumb"); //give the thumbnail a class
+    img.setAttribute("src", imageSource); //add src of likedImages[i] to img
     thumbnail.appendChild(img); //add img element to li element
     resultList.appendChild(thumbnail); //append to resultsList element (resultList.appendChild())
   }
 
-
+  //hide all 14 cards
   var allPhotos = document.querySelector('#allcards');
-  console.log(allPhotos);
   allPhotos.setAttribute("class", "display-none");
-
 }
 
-//add event listener for like button to slideOutRight
+//SLIDE OUT RIGHT - event listener for like button to slideOutRight
 var awwButton = document.querySelector(".like");
-
 function slideOutRight(event){
   event.preventDefault();
   img.classList.add("slideOutRight");
@@ -62,19 +60,16 @@ function slideOutRight(event){
   var picElement = document.querySelector( "#card-" + visibleCardID + "-img");
   var pic = picElement.getAttribute("src"); //"../final project/images/PacificHeights.jpg"
 
-  likedImages.push(pic);
-
+  likedImages.push(pic); //add new item to the liked images
   hideImage();
 }
   awwButton.addEventListener("click", slideOutRight);
 
-//add event listener for meh button to slideOutLeft
+//SLIDE OUT LEFT - event listener for dislike button to slideOutLeft
 var mehButton = document.querySelector(".dislike");
-
 function slideOutLeft(event){
   event.preventDefault();
   img.classList.add("slideOutLeft");
-
   hideImage();
 }
   mehButton.addEventListener("click", slideOutLeft);
