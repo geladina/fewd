@@ -15,14 +15,24 @@ function hideImage() {
  }
 
 function showMeResults(){
+  //adopt link
   var resultList = document.querySelector(".results-list");
   var matchText = document.createElement("h2");
+
+  var textLink = document.createElement('a');
+  var body = document.querySelector("body");
+  textLink.textContent = "Feel like adopting a puppy?";
+  textLink.href = "https://www.sfspca.org/adoptions";
+  body.appendChild(textLink);
+
   if (likedImages.length === 0) {
     matchText.textContent = "You didn't like any dogs. Lame!";
   } else {
     matchText.textContent = "You've been matched with the following dogs:";
   }
   resultList.appendChild(matchText);
+
+
 
   for (var i = 0; i < likedImages.length; i++) {
     var imageSource = likedImages[i];
