@@ -51,7 +51,7 @@ function showMeResults(){
   allPhotos.setAttribute("class", "display-none");
 }
 
-//SLIDE OUT RIGHT - event listener for like button to slideOutRight
+//SLIDE OUT RIGHT - event handler for like button to slideOutRight
 var awwButton = document.querySelector(".like");
 function slideOutRight(event){
   event.preventDefault();
@@ -65,7 +65,7 @@ function slideOutRight(event){
 }
   awwButton.addEventListener("click", slideOutRight);
 
-//SLIDE OUT LEFT - event listener for dislike button to slideOutLeft
+//SLIDE OUT LEFT - event handler for dislike button to slideOutLeft
 var mehButton = document.querySelector(".dislike");
 function slideOutLeft(event){
   event.preventDefault();
