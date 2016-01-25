@@ -3,115 +3,85 @@
   <head>
     <meta charset="utf-card-2">
     <title>Dogs of San Fran</title>
-    <link rel="stylesheet" href="dogs-of-sanfran.css" media="screen" charset="utf-card-2">
     <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="dogs-of-sanfran.css">
   </head>
 
   <body>
-    <div>
-      <h1>Dogs of San Fran</h1>
+    <h1>Dogs of San Fran</h1>
+
+    <div id="allcards">
 
       <div class="polaroid">
         <div id="card-14" class="card">
           <p>Castro</p>
-            <img src="../final project/images/Castro.jpg">
+          <img id="card-14-img" src="../final project/images/Castro.jpg">
         </div>
         <div id="card-13" class="card">
           <p>Diamond Heights</p>
-            <img src="../final project/images/DiamondHeights.jpg">
+          <img id="card-13-img" src="../final project/images/DiamondHeights.jpg">
         </div>
         <div id="card-12" class="card">
           <p>Dogpatch</p>
-            <img src="../final project/images/Dogpatch.jpg">
+          <img id="card-12-img" src="../final project/images/Dogpatch.jpg">
         </div>
         <div id="card-11" class="card">
           <p>Duboce Triangle</p>
-            <img src="../final project/images/DuboceTriangle.jpg">
+          <img id="card-11-img" src="../final project/images/DuboceTriangle.jpg">
         </div>
         <div id="card-10" class="card">
           <p>Golden Gate Park</p>
-            <img src="../final project/images/GoldenGatePark.jpg">
+          <img id="card-10-img" src="../final project/images/GoldenGatePark.jpg">
         </div>
         <div id="card-9" class="card">
           <p>Lower Haight</p>
-            <img src="../final project/images/LowerHaight.jpg">
+          <img id="card-9-img" src="../final project/images/LowerHaight.jpg">
         </div>
         <div id="card-8" class="card">
           <p>Marin Headlands</p>
-            <img src="../final project/images/MarinHeadlands.jpg">
+          <img id="card-8-img" src="../final project/images/MarinHeadlands.jpg">
         </div>
         <div id="card-7" class="card">
           <p>Mission Dolores</p>
-            <img src="../final project/images/MissionDolores.jpg">
+          <img id="card-7-img" src="../final project/images/MissionDolores.jpg">
         </div>
         <div id="card-6" class="card">
-          <p>Noe Valley</p>
-            <img src="../final project/images/Mission.jpg">
+          <p>Mission</p>
+          <img id="card-6-img" src="../final project/images/Mission.jpg">
         </div>
         <div id="card-5" class="card">
           <p>Noe Valley</p>
-            <img src="../final project/images/NoeValley.jpg">
+          <img id="card-5-img" src="../final project/images/NoeValley.jpg">
         </div>
         <div id="card-4" class="card">
           <p>Nopa</p>
-            <img src="../final project/images/Nopa.jpg">
+          <img id="card-4-img" src="../final project/images/Nopa.jpg">
         </div>
         <div id="card-3" class="card">
           <p>Pacific Heights</p>
-            <img src="../final project/images/PacificHeights.jpg">
+          <img id="card-3-img" src="../final project/images/PacificHeights.jpg">
         </div>
         <div id="card-2" class="card">
           <p>Potrero Hill</p>
-            <img src="../final project/images/PotreroHill.jpg">
+          <img id="card-2-img" src="../final project/images/PotreroHill.jpg">
         </div>
         <div id="card-1" class="card">
           <p>SoMa</p>
-            <img src="../final project/images/SoMa.jpg">
+          <img id="card-1-img" src="../final project/images/SoMa.jpg">
         </div>
       </div>
-
       <div class="buttons">
         <button class="like"><img src="../final project/images/like-icon.png"></img></button>
         <button class="dislike"><img src="../final project/images/dislike-icon.png"></img></button>
       </div>
   </div>
 
-  <script type="text/javascript">
+  <div class="results-list">
+  </div>
 
-  var visibleCardID = 1;
-  var img = document.querySelector( '#card-' + visibleCardID);
-
-  // show and hide images
-  function hideImage() {
-    img.classList.add("hide");
-    visibleCardID = visibleCardID + 1;
-    img = document.querySelector( '#card-' + visibleCardID);
-  }
-
-  //add event listener for like button to slideOutRight
-  var awwButton = document.querySelector(".like");
-
-  function slideOutRight(event){
-    event.preventDefault();
-    img.classList.add("slideOutRight");
-
-    hideImage();
-  }
-    awwButton.addEventListener("click", slideOutRight);
-
-
-  //add event listener for meh button to slideOutLeft
-  var mehButton = document.querySelector(".dislike");
-  function slideOutLeft(event){
-    event.preventDefault();
-    img.classList.add("slideOutLeft");
-
-    hideImage();
-  }
-    mehButton.addEventListener("click", slideOutLeft);
-
-
-  </script>
+<script type="text/javascript" src="dogs-of-sanfran.js">
+</script>
 
   </body>
+
 </html>

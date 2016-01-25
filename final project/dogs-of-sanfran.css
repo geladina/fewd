@@ -3,33 +3,35 @@ body {
   background-color: #FFF;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 40px;
+  font: 40px 'Amatic SC', cursive;
   line-height: 1em;
   text-align: center;
   padding-top: 2%;
 }
 
-img {
+.card img {
   width: 400px;
   height: 400px;
 }
 
+.thumb img {
+  width: 100%;
+  height: 100%;
+}
+
 div {
-  width: 700px;
   margin: 0 auto;
 }
 
 .polaroid {
-  width: 400px;
+  width: 428px;
   height:500px;
   position: relative;
   margin-top: 10px;
-  margin-left: 19%;
 }
 
 @keyframes slideOutRight {
@@ -148,7 +150,6 @@ p {
   cursor:pointer;
   }
 
-
 .card {
   position:absolute;
   top:0;
@@ -157,4 +158,29 @@ p {
 
 .card.hide {
   opacity: 0;
+}
+
+.display-none {
+  display: none;
+}
+
+.results-list {
+  width: 800px;
+  margin-top: 10px;
+}
+
+h2 {
+  font: 20px 'Amatic SC', cursive;
+  line-height: 1em;
+  text-align: center;
+  padding-top: 2%;
+}
+
+ .thumb {
+  margin: 0;
+  display: inline-block;
+  float:left;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
 }
